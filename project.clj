@@ -3,10 +3,13 @@
   :url "http://example.com/FIXME"
   :min-lein-version "2.0.0"
 
-  :dependencies [[org.clojure/clojure "1.6.0"]
-                 [compojure           "1.3.1"]
-                 [ring/ring-defaults  "0.1.2"]
-                 [environ             "1.0.0"]]
+  :dependencies [[org.clojure/clojure        "1.6.0"]
+                 [compojure                  "1.3.1"]
+                 [metosin/ring-swagger-ui    "2.1.1-M2"]
+                 [metosin/ring-http-response "0.6.2"]
+                 [metosin/compojure-api      "0.21.0"]
+                 [ring/ring-defaults         "0.1.2"]
+                 [environ                    "1.0.0"]]
 
   :plugins [[lein-environ "1.0.0"]
             [lein-ring    "0.8.13"]]
