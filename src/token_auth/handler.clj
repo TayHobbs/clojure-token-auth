@@ -15,6 +15,6 @@
   (swagger-docs
     {:info {:title "Sample api"}})
 
-  (GET* "/" []
+  (GET* "/example" []
     :summary "An example route returning 'hello world'"
     (ok "hello world")))
