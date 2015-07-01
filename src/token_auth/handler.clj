@@ -16,5 +16,5 @@
     {:info {:title "Sample api"}})
 
   (GET* "/" []
-    :no-doc true
+    :summary "An example route returning 'hello world'"
     (ok "hello world")))
