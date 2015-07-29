@@ -8,6 +8,8 @@
                  [metosin/ring-swagger-ui    "2.1.1-M2"]
                  [metosin/ring-http-response "0.6.2"]
                  [metosin/compojure-api      "0.21.0"]
+                 [postgresql/postgresql      "9.3-1102.jdbc41"]
+                 [yesql                      "0.5.0-rc1"]
                  [ring/ring-defaults         "0.1.2"]
                  [environ                    "1.0.0"]]
 
