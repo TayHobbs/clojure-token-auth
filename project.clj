@@ -11,6 +11,7 @@
                  [postgresql/postgresql      "9.3-1102.jdbc41"]
                  [yesql                      "0.5.0-rc1"]
                  [ring/ring-defaults         "0.1.2"]
+                 [cheshire                   "5.5.0"]
                  [environ                    "1.0.0"]]
 
   :plugins [[lein-environ "1.0.0"]
