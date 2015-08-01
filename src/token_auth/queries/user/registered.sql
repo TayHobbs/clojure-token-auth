@@ -5,4 +5,4 @@ SELECT id
        ,password
        ,refresh_token
        ,email
-FROM user;
+FROM registered_user;
