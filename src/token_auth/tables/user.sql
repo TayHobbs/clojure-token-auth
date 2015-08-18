@@ -12,11 +12,12 @@ CREATE TABLE IF NOT EXISTS registered_user (
 -- Drop the user table
 DROP TABLE registered_user;
 
--- name: insert-test-user
--- insert user for testing
+-- name: insert-test-users
+-- insert users for testing
 /* This must return a result, otherwise the tests errors */
 WITH rows AS (
     INSERT INTO registered_user (email, username, password, refresh_token)
-    VALUES ('test@test.com', 'test.user', 'asdf', 'abc123') RETURNING id
+    VALUES ('test@test.com', 'test.user', 'asdf', 'abc123'),
+           ('test2@test.com', 'test.user2', 'asdf', 'abc123') RETURNING id
 )
 SELECT id FROM rows;

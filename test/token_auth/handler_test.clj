@@ -8,7 +8,7 @@
 (defn setup-teardown [f]
   (try
     (query/create-registered-user-table-if-not-exists!)
-    (query/insert-test-user)
+    (query/insert-test-users)
     (f)
     (finally
       (query/drop-user-table!))))
@@ -16,9 +16,12 @@
 (use-fixtures :each setup-teardown)
 
 (deftest test-app
-  (testing "main route"
-    (let [response (app (mock/request :get "/example"))
+  (testing "all-users route returns an array of all users"
+    (let [response (app (mock/request :get "/all-users"))
           body     (parse-body (:body response))]
       (is (= (:id (first body)) 1))
       (is (= (:email (first body)) "test@test.com"))
-      (is (= (:username (first body)) "test.user")))))
+      (is (= (:username (first body)) "test.user"))
+      (is (= (:id (second body)) 2))
+      (is (= (:email (second body)) "test2@test.com"))
+      (is (= (:username (second body)) "test.user2")))))
