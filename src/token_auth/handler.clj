@@ -15,8 +15,8 @@
 (defapi app
   (swagger-ui)
   (swagger-docs
-    {:info {:title "Sample api"}})
+    {:info {:title "Token authentication API"}})
 
   (GET* "/all-users" []
-    :summary "An example route returning 'hello world'"
+    :summary "Returns all users"
     (ok (all-users))))
