@@ -1,8 +1,7 @@
 -- name: all-users
 -- Selects all users
 SELECT id
-       ,username
-       ,password
-       ,refresh_token
-       ,email
+       , email
+       , username
+       , refresh_token
 FROM registered_user;
