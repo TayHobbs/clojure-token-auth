@@ -2,7 +2,7 @@
   (:require [ring.util.http-response :refer :all]
             [compojure.api.sweet :refer :all]
             [schema.core :as s]
-            [token-auth.route-functions.all-users :refer :all]
+            [token-auth.route-functions.user :refer :all]
             [token-auth.queries.query-defs :as query]))
 
 (s/defschema Thingie

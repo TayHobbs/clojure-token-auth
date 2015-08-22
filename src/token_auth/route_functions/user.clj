@@ -1,4 +1,4 @@
-(ns token-auth.route-functions.all-users
+(ns token-auth.route-functions.user
   (:require [token-auth.queries.query-defs :as query]))
 
 (defn all-users []
