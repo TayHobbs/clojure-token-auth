@@ -17,6 +17,16 @@
   (swagger-docs
     {:info {:title "Token authentication API"}})
 
+  (context* "/api" []
+
   (GET* "/all-users" []
+    :tags    ["All users"]
     :summary "Returns all users"
-    (ok (all-users))))
+    (ok (all-users)))
+
+  (POST* "/user"    {:as request}
+       :tags        ["Create user"]
+       :return      {:email String :username String :id Long}
+       :body-params [email :- String username :- String password :- String]
+       :summary     "Create a new user"
+       (created (create-user email username password)))))
