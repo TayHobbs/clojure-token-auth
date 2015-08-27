@@ -20,12 +20,12 @@
   (context* "/api" []
 
   (GET* "/all-users" []
-    :tags    ["All users"]
+    :tags    ["Users"]
     :summary "Returns all users"
     (ok (all-users)))
 
   (POST* "/user"    {:as request}
-       :tags        ["Create user"]
+       :tags        ["Users"]
        :return      {:email String :username String :id Long}
        :body-params [email :- String username :- String password :- String]
        :summary     "Create a new user"
