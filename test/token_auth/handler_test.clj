@@ -33,7 +33,7 @@
       (is (= (:username (second body)) "test.user2")))))
 
 (deftest test-app
-  (testing "all-users route returns an array of all users"
+  (testing "creating a user successfully"
     (let [response (create-user {:email "x@x.com" :username "thobbs" :password "asdf"})
           body     (parse-body (:body response))]
       (is (= (:status response) 201))
