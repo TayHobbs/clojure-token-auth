@@ -21,4 +21,4 @@
        :return      {:email String :username String :id Long}
        :body-params [email :- String username :- String password :- String]
        :summary     "Create a new user"
-       (created (create-user email username password)))))
+       (create-valid-user username email password))))
