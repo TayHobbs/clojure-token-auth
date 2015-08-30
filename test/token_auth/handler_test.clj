@@ -2,7 +2,7 @@
   (:require [clojure.test :refer :all]
             [ring.mock.request :as mock]
             [token-auth.handler :refer :all]
-            [token-auth.helpers :refer [parse-body]]
+            [token-auth.helpers :refer [parse-body create-test-users]]
             [token-auth.queries.query-defs :as query]
             [cheshire.core :as ch]))
 
@@ -13,7 +13,6 @@
 (defn setup-teardown [f]
   (try
     (query/create-registered-user-table-if-not-exists!)
-    (query/insert-test-users)
     (f)
     (finally
       (query/drop-user-table!))))
@@ -23,6 +22,7 @@
 
 (deftest test-app
   (testing "all-users route returns an array of all users"
+    (create-test-users)
     (let [response (app (mock/request :get "/api/all-users"))
           body     (parse-body (:body response))]
       (is (= (:id (first body)) 1))
