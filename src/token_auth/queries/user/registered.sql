@@ -24,6 +24,15 @@ SELECT id
 FROM   registered_user
 WHERE  username = :username;
 
+-- name: get-user-by-refresh-token
+-- Selects user by refresh token
+SELECT id
+       , email
+       , username
+       , refresh_token
+FROM   registered_user
+WHERE  refresh_token = :refresh_token;
+
 -- name: insert-user<!
 -- inserts a user
 INSERT INTO registered_user (
